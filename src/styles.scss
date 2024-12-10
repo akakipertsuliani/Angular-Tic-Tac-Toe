@@ -1,3 +1,118 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-palette: mat.define-palette((
+  50: #F5F5F5,
+  100: #EEEEEE,
+  200: #E0E0E0,
+  300: #BDBDBD,
+  400: #9E9E9E,
+  500: #FFFFFF,
+  600: #E0E0E0,
+  700: #BDBDBD,
+  800: #9E9E9E,
+  900: #616161,
+  A100: #D5D5D5,
+  A200: #AAAAAA,
+  A400: #303030,
+  A700: #616161,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: white,
+    A700: white,
+  )
+));
+
+$accent-palette: mat.define-palette((
+  50: #F5FAFF,
+  100: #E3F2FD,
+  200: #BBDEFB,
+  300: #90CAF9,
+  400: #64B5F6,
+  500: #011222,
+  600: #039BE5,
+  700: #0288D1,
+  800: #0277BD,
+  900: #01579B,
+  A100: #80D8FF,
+  A200: #40C4FF,
+  A400: #00B0FF,
+  A700: #0091EA,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: white,
+  )
+));
+
+$warn-palette: mat.define-palette((
+  50: #FFF8E1,
+  100: #FFECB3,
+  200: #FFE082,
+  300: #FFD54F,
+  400: #FFCA28,
+  500: #DA9904,
+  600: #FFB300,
+  700: #FFA000,
+  800: #FF8F00,
+  900: #FF6F00,
+  A100: #FFE57F,
+  A200: #FFD740,
+  A400: #FFC400,
+  A700: #FFAB00,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: black,
+    800: black,
+    900: black,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: black,
+  )
+));
+
+$tictactoeangular-theme: mat.define-light-theme((
+  color: (
+    primary: $primary-palette,
+    accent: $accent-palette,
+    warn: $warn-palette,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.all-component-themes($tictactoeangular-theme);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,4 +121,21 @@
     margin: 0;
     padding: 0;
     overscroll-behavior: none;
+}
+
+button, 
+input {
+  outline: none;
+}
+
+.anime {
+  animation: AN .3s ease-in-out 1;
+}
+
+@keyframes AN {
+  from {
+      opacity: 0;
+  } to {
+      opacity: 1;
+  }
 }
