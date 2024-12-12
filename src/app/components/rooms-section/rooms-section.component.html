@@ -1,0 +1,23 @@
+<section class="w-full h-3/4 flex flex-col box-border px-12 py-4 bg-[#011222]">
+    <div class="flex items-center justify-between mb-6">
+        <span class="text-xl font-bold text-gray-200">Rooms</span>
+        <div class="flex items-center gap-3">
+            <input type="text" name="search" placeholder="Search" class="w-2/3 h-10 px-4 rounded-lg border border-gray-600 bg-[#012744] text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button mat-ripple type="button" class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-md transition duration-300 hover:bg-blue-700">
+                <i class="fa-solid fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <div class="w-full flex flex-wrap gap-6 items-start justify-start">
+        <div class="h-96 w-64 flex flex-col bg-[#012744] rounded-lg shadow-lg p-4">
+            <img src="img.jpeg" alt="Game background" class="w-full h-3/4 object-cover rounded-md mb-4">
+            <div class="text-left">
+                <span class="text-lg font-medium text-gray-200 mb-1 block">Room name</span>
+                <span class="text-sm text-gray-400 mb-3 block">Created by Username</span>
+            </div>
+            <button mat-ripple type="button" class="w-full h-10 bg-blue-600 text-white font-semibold rounded-md transition duration-300 hover:bg-blue-700">
+                Join
+            </button>
+        </div>
+    </div>
+</section>

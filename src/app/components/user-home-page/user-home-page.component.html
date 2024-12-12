@@ -1,0 +1,42 @@
+<title>Home</title>
+
+<app-header />
+
+<section class="absolute inset-0 w-full h-dvh flex px-12 py-4 box-border overflow-auto">
+    <div class="w-1/4 flex items-center justify-center">
+        <div class="relative h-3/4 w-full bg-[#012744] shadow-lg rounded-lg p-6 box-border flex flex-col justify-between">
+            <div class="h-1/2 w-full flex flex-col items-center gap-4">
+                <div class="w-24 h-24">
+                    <img class="w-full h-full rounded-full border-4 border-green-500 object-cover" src="img.jpeg" alt="Profile Picture">
+                </div>
+                <span *ngIf="username" class="text-2xl font-semibold text-gray-200">
+                    {{ username }}
+                </span>
+            </div>
+
+            <div class="w-full flex justify-around border-t border-gray-600 pt-4">
+                <div class="flex flex-col items-center">
+                    <span *ngIf="userStats" class="text-xl font-medium text-gray-300">{{ userStats.win }}</span>
+                    <span class="text-sm text-gray-400">Win</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span *ngIf="userStats" class="text-xl font-medium text-gray-300">{{ userStats.lose }}</span>
+                    <span class="text-sm text-gray-400">Lose</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span *ngIf="userStats" class="text-xl font-medium text-gray-300">{{ userStats.draw }}</span>
+                    <span class="text-sm text-gray-400">Draw</span>
+                </div>
+            </div>
+
+            <div class="mt-4 flex justify-center">
+                <button mat-ripple (click)="signOut()" type="button" class="w-3/4 h-10 bg-red-500 text-white font-semibold rounded-lg shadow-md transition duration-300 hover:bg-red-600">
+                    <mat-spinner *ngIf="loader" diameter="20"></mat-spinner>
+                    <span *ngIf="!loader">Log Out</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <app-rooms-section class="w-full self-center justify-self-center"></app-rooms-section>
+</section>

@@ -39,7 +39,7 @@ export class SignInComponent {
       if (passwordControl.errors?.['required']) {
         return 'Password is required';
       } if (passwordControl.errors?.['minlength']) {
-        return 'Min length 6';
+        return 'Password must be at least 6 characters long';
       }
     }
 
@@ -59,6 +59,7 @@ export class SignInComponent {
       };
 
       this.auth.signInUser(userData.email, userData.password).then(() => {
+        this.route.navigate(['/home']);
         this.successfulAuth = false;
       }).catch((err) => {
         this.getErrors = err.code;
