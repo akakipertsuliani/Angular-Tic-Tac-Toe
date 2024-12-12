@@ -64,6 +64,7 @@ export class SignInComponent {
       }).catch((err) => {
         this.getErrors = err.code;
         this.successfulAuth = false;
+        console.log(err);
       });
     } else {
       this.successfulAuth = false;

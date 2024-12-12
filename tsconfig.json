@@ -27,6 +27,7 @@
       "@components/*": ["src/app/components/*"],
       "@authComponents/*": ["src/app/components/Auth/*"],
       "@interface/*": ["src/app/interface/*"],
+      "@guard/*": ["src/app/guard/*"],
       "@assets/*": ["src/assets/*"],
       "@env/*": ["src/*"]
     }
