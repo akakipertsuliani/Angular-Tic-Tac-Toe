@@ -1,13 +1,29 @@
 import { Injectable } from '@angular/core';
-import { UserAuthInter } from '@interface/auth.interface';
+import { getUserData, UserAuthInter } from '@interface/auth.interface';
 import { Firestore, setDoc, doc } from '@angular/fire/firestore';
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInAnonymously, updateProfile, authState } from '@angular/fire/auth';
+import { filter, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: Auth, private firestore: Firestore) {}
+  user$: Observable<getUserData>;
+  authUser!: getUserData;
+
+  constructor(private auth: Auth, private firestore: Firestore) {
+    this.user$ = authState(this.auth);
+    this.user$.pipe(
+      filter(user => !!user),
+    ).subscribe({
+      next: (user) => {
+        this.authUser = user;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
 
   private get getFormattedTime(): string {
     const currentDate = new Date();

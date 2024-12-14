@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogClose } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterLink,
+    MatDialogClose,
   ],
   exports: [
-    RouterLink,
     CommonModule,
+    MatRadioModule,
+    MatDialogClose,
     MatRippleModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule,
   ],
 })
-export class AuthUserModule {}
+export class dialogModule {}
